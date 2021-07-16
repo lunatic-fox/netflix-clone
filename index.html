@@ -1,0 +1,60 @@
+<html lang="pt-br">
+<head>
+    <meta property="og:image" content="banner.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1280">
+    <meta name="description" content="Netflix clone project">
+    <meta name="keywords" content="HTML, CSS, JavaScript, DIO, digital, innovation, one">
+    <meta name="author" content="Josélio de S. C. Júnior">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./res/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./owl/owl.carousel.min.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <title>Netflix</title>
+</head>
+<body>
+    <section id="v-container" class="gone">
+        <input id="back" class="btn" type="button" value="VOLTAR">
+        <div id="video"></div>
+    </section>
+    <header>
+        <section class="container">
+            <img id="netflix-logo" src="./res/logo.svg">
+            <nav class="container">
+                <a href="#">Início</a>
+                <a href="#">Séries</a>
+                <a href="#">Filmes</a>
+                <a href="#">Documentários</a>
+            </nav>
+        </section>
+    </header>
+    <main>
+        <section id="main-movie" class="container">
+            <div id="main-movie-title"></div>
+            <div id="main-movie-description"></div>
+            <div class="container">
+                <button id="watch" class="btn">
+                    <img src="/res/play-icon.png" alt="Assistir agora">
+                    <div>assistir agora</div>
+                </button>
+                <button class="btn">
+                    <div>minha lista</div>
+                    <img src="/res/plus-icon.png" alt="Adicionar à minha lista">
+                </button>
+            </div>
+        </section>
+        <section id="carousel" class="carousel"></section>
+        <footer class="container center">
+            <a class="container" href="https://github.com/joseliojunior">
+                <div style="font-weight: 700;">Josélio Júnior - 2021</div>
+                <img style="margin-left: 10px;" src="./res/github-icon.png">
+            </a>
+        </footer>
+    </main>    
+</body>
+<script src="./owl/jquery.min.js"></script>
+<script src="./owl/owl.carousel.min.js"></script>
+<script type="module" src="./js/main.js"></script>
+</html>

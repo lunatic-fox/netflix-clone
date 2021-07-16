@@ -1,0 +1,52 @@
+/*
+ * Author: Josélio de S. C. Júnior <joseliojrx25@gmail.com>
+ * Copyright: Josélio de S. C. Júnior 2021
+ */
+#main-movie {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 15px 20px;
+}
+
+#main-movie-title {
+    margin-bottom: 10px;
+}
+
+#main-movie-title img {
+    max-width: 90%;
+    width: 50%;
+}
+
+#main-movie-description {
+    width: 70%;
+    padding: 5px;
+    line-height: 1.3em;
+    cursor: default;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.623);
+    padding: 0.7em;
+    margin: 0.7em 0.3em;
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-size: 1em;
+    transition: 400ms ease all;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn:hover {
+    background: var(--red);
+}
+
+.btn img {
+    height: 20px;
+    margin: 0.3em 0.5em;
+}
