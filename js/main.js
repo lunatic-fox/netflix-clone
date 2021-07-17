@@ -31,7 +31,7 @@ const main = {
 const movies = data.map(({ id }) =>
     `<div id="item${id}" class="item">
         <img class="carousel-img" src="./res/carousel-img/icons/${id}.jpg">
-    </div>`).sort(() => Math.random() - 0.5);
+    </div>`).sort(() => Math.random() - .5);
 
 main.ids.carousel.innerHTML = `<div class="owl-carousel owl-theme">${movies.join('')}</div>`;
 
