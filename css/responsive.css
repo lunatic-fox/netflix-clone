@@ -2,7 +2,7 @@
  * Author: Josélio de S. C. Júnior <joseliojrx25@gmail.com>
  * Copyright: Josélio de S. C. Júnior 2021
  */
-@import url('/css/main.css');
+@import url('main.css');
 @media screen and (max-width: 500px) {
 
     nav.container {
