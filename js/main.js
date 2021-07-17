@@ -43,21 +43,22 @@ const movieOrder = [...movies.map(x => +x.match(/\d+/)[0])];
  * @param {number} item The icon id number.
  */
 const mainMovieCard = item => {
-    const { titleAlt, titleImg, description, play } = data[item];
-    const { coverUrl, coverUrlMin, titleUrl, ids, css } = main;
-    const { mainMovie, mainMovieTitle, mainMovieDescp, watch, video, vContainer } = ids;
+    const { titleAlt, titleImg, description, play } = data[item],
+    { coverUrl, coverUrlMin, titleUrl, ids, css } = main,
+    { BG_COVER, FADE_IN, SHADOW } = css,
+    { mainMovie, mainMovieTitle, mainMovieDescp, watch, video, vContainer } = ids;
 
     if (window.innerWidth < 500) {
         // Minor background image.
-        mainMovie.style.cssText = `background: ${css.SHADOW}, url(${coverUrlMin}${item}.jpg); ${css.BG_COVER}`;        
+        mainMovie.style.cssText = `background: ${SHADOW}, url(${coverUrlMin}${item}.jpg); ${BG_COVER}`;        
     } else {
         // Regular background image.
-        mainMovie.style.cssText = `background: ${css.SHADOW}, url(${coverUrl}${item}.jpg); ${css.BG_COVER}`;
+        mainMovie.style.cssText = `background: ${SHADOW}, url(${coverUrl}${item}.jpg); ${BG_COVER}`;
     }
 
     watch.addEventListener('click', () => {
         vContainer.classList = 'container column';
-        setTimeout(() => vContainer.style.cssText = css.FADE_IN, 1);
+        setTimeout(() => vContainer.style.cssText = FADE_IN, 1);
         video.innerHTML = play;
     });
 
