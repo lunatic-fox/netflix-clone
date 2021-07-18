@@ -77,12 +77,10 @@ main.ids.back.addEventListener('click', () => {
 // Showing off first movie of the list.
 mainMovieCard(movieOrder[0]);
 
-// Testing...
-const newItem = e => document.getElementById(`item${e}`);
 
 // Each movie icon receives a listener.
 movieOrder.forEach(e => 
-    newItem(e).addEventListener('click', () => {
+    document.getElementById(`item${e}`).addEventListener('click', () => {
         mainMovieCard(e);
         const scrolling = setInterval(() => {
             scroll(0, scrollY - 4);
