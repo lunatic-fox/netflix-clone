@@ -21,8 +21,8 @@ const main = {
     titleUrl: './res/carousel-img/titles/',
     css: {
         BG_COVER: 'background-size: cover;',
-        FADE_IN: 'transition: 0.8s ease all; opacity: 100%;',
-        FADE_OUT: 'transition: 0.8s ease all; opacity: 0;',
+        FADE_IN: 'transition: .8s ease all; opacity: 100%;',
+        FADE_OUT: 'transition: .8s ease all; opacity: 0;',
         SHADOW: 'var(--shadow)'
     }
 };
@@ -44,9 +44,10 @@ const movieOrder = [...movies.map(x => +x.match(/\d+/)[0])];
  */
 const mainMovieCard = item => {
     const { titleAlt, titleImg, description, play } = data[item],
-    { coverUrl, coverUrlMin, titleUrl, ids, css } = main,
-    { BG_COVER, FADE_IN, SHADOW } = css,
-    { mainMovie, mainMovieTitle, mainMovieDescp, watch, video, vContainer } = ids;
+    { coverUrl, coverUrlMin, titleUrl,
+        ids: { mainMovie, mainMovieTitle, mainMovieDescp, watch, video, vContainer },
+        css: { BG_COVER, FADE_IN, SHADOW }
+    } = main;
 
     if (window.innerWidth < 500) {
         // Minor background image.
@@ -68,9 +69,9 @@ const mainMovieCard = item => {
 
 // Go back to main screen.
 main.ids.back.addEventListener('click', () => {
-    const { ids, css } = main;
-    ids.vContainer.style.cssText = css.FADE_OUT;
-    setTimeout(() => ids.vContainer.classList = 'gone', 800);
+    const { ids: { vContainer }, css: { FADE_OUT } } = main;
+    vContainer.style.cssText = FADE_OUT;
+    setTimeout(() => vContainer.classList = 'gone', .8);
 });
 
 // Showing off first movie of the list.
