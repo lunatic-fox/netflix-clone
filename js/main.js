@@ -35,15 +35,15 @@ const movies = data.map(({ id }) =>
 
 main.ids.carousel.innerHTML = `<div class="owl-carousel owl-theme">${movies.join('')}</div>`;
 
-/** Randomized icons id number */
+/** Randomized icons id number array */
 const movieOrder = [...movies.map(x => +x.match(/\d+/)[0])];
 
 /**
  * Sets main movie exhibition.
- * @param {number} item The icon id number.
+ * @param {number} i The icon id number.
  */
-const mainMovieCard = item => {
-    const { titleAlt, titleImg, description, play } = data[item],
+const mainMovieCard = i => {
+    const { titleAlt, titleImg, description, play } = data[i],
     { coverUrl, coverUrlMin, titleUrl,
         ids: { mainMovie, mainMovieTitle, mainMovieDescp, watch, video, vContainer },
         css: { BG_COVER, FADE_IN, SHADOW }
@@ -51,10 +51,10 @@ const mainMovieCard = item => {
 
     if (window.innerWidth < 500) {
         // Minor background image.
-        mainMovie.style.cssText = `background: ${SHADOW}, url(${coverUrlMin}${item}.jpg); ${BG_COVER}`;        
+        mainMovie.style.cssText = `background: ${SHADOW}, url(${coverUrlMin}${i}.jpg); ${BG_COVER}`;        
     } else {
         // Regular background image.
-        mainMovie.style.cssText = `background: ${SHADOW}, url(${coverUrl}${item}.jpg); ${BG_COVER}`;
+        mainMovie.style.cssText = `background: ${SHADOW}, url(${coverUrl}${i}.jpg); ${BG_COVER}`;
     }
 
     watch.addEventListener('click', () => {
@@ -78,16 +78,16 @@ main.ids.back.addEventListener('click', () => {
 mainMovieCard(movieOrder[0]);
 
 // Each movie icon receives a listener.
-movieOrder.forEach(e => {
+movieOrder.forEach(e => 
     document.getElementById(`item${e}`).addEventListener('click', () => {
+        mainMovieCard(e);
         const scrolling = setInterval(() => {
             scroll(0, scrollY - 4);
             if (scrollY === 0)
                 window.clearInterval(scrolling);
         }, 1);
-        mainMovieCard(e);
-    });
-});
+    })
+);
 
 // jQuery carousel set.
 $('.owl-carousel').owlCarousel({
